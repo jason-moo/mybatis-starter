@@ -1,0 +1,46 @@
+server:
+   port: 8080
+   tomcat:
+     uri-encoding: UTF-8
+
+spring:
+  druid:
+    multi:
+      master:
+         username: root
+         password: "123456"
+         url: jdbc:mysql://localhost:3306/db1?characterEncoding=utf-8&useSSL=true&verifyServerCertificate=false
+         driver-class-name: com.mysql.jdbc.Driver
+         validation-query: select 'X'
+         initial-size: 5
+         max-active: 15
+         min-idle: 2
+         max-wait: 60000
+         time-between-eviction-runs-millis: 3000
+         min-evictable-idle-time-millis: 300000
+         test-while-idle: true
+         test-on-borrow: false
+         test-on-return: false
+         keep-alive: true
+         pool-prepared-statements: true
+         max-pool-prepared-statement-per-connection-size: 20
+         filters: stat,wall  # 默认启动了stat,wall
+      other:
+         username: root
+         password: "123456"
+         url: jdbc:mysql://localhost:3306/db2?characterEncoding=utf-8&useSSL=true&verifyServerCertificate=false
+         driver-class-name: com.mysql.jdbc.Driver
+         validation-query: select 'X'
+         initial-size: 5
+         max-active: 15
+         min-idle: 2
+         max-wait: 60000
+         time-between-eviction-runs-millis: 3000
+         min-evictable-idle-time-millis: 300000
+         test-while-idle: true
+         test-on-borrow: false
+         test-on-return: false
+         keep-alive: true
+         pool-prepared-statements: true
+         max-pool-prepared-statement-per-connection-size: 20
+         filters: stat,wall  # 默认启动了stat,wall
